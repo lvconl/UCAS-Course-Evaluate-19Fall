@@ -120,7 +120,7 @@ hrefnum = re.compile(r"(\d+)")
 
 for row in eva.find_all('tr'): 
     rowa = row.find_all('a')
-    if (rowa == []): continue
+    if (rowa == [] or (len(rowa) <= 3)): continue
     href = rowa[3].get('href')
     rowstr = list(map(lambda x: x.string, rowa))
     if (rowstr[3] == '评估'):
